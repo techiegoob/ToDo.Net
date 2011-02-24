@@ -34,12 +34,15 @@
             // 
             // listBox1
             // 
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 14;
-            this.listBox1.Location = new System.Drawing.Point(61, 153);
+            this.listBox1.Location = new System.Drawing.Point(0, 0);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(163, 102);
+            this.listBox1.Size = new System.Drawing.Size(284, 98);
             this.listBox1.TabIndex = 2;
+            this.listBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.listBox1_KeyPress);
             // 
             // lStatus
             // 
@@ -53,12 +56,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(284, 409);
             this.Controls.Add(this.lStatus);
             this.Controls.Add(this.listBox1);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "fMain";
             this.Text = "ToDo.Net";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fMain_KeyPress);
             this.Resize += new System.EventHandler(this.fMain_Resize);
             this.ResumeLayout(false);
 
