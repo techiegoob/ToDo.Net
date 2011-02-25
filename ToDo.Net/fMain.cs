@@ -15,6 +15,13 @@ namespace ToDo.Net
         {
             InitializeComponent();
             ResizeListing();
+
+            // add test item(s)
+            ListViewItem liv1=new ListViewItem();
+            liv1.ForeColor=Color.Red;
+            liv1.Text="(A)";
+            liv1.SubItems.Add("Test1", Color.Black, lstItems.BackColor, lstItems.Font);            
+            this.lstItems.Items.Add(liv1);
         }
 
         private void fMain_Resize(object sender, EventArgs e)
@@ -26,7 +33,8 @@ namespace ToDo.Net
         {
             //listBox1.Top = 0;
             //listBox1.Left = 0;
-            listBox1.Size = new Size(this.ClientSize.Width, this.ClientSize.Height);
+            this.lstItems.Size = new Size(this.ClientSize.Width, this.ClientSize.Height);
+            this.lstItems.Columns[1].Width = this.lstItems.Width - this.lstItems.Columns[0].Width;
 
             // position the status label.
             lStatus.Top = this.ClientSize.Height - 30;
@@ -48,7 +56,7 @@ namespace ToDo.Net
             }
         }
 
-        private void listBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void lstItems_KeyPress(object sender, KeyPressEventArgs e)
         {
             switch (e.KeyChar.ToString())
             {

@@ -28,21 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.lStatus = new System.Windows.Forms.Label();
+            this.lstItems = new System.Windows.Forms.ListView();
+            this.colPriority = new System.Windows.Forms.ColumnHeader();
+            this.colItemData = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
-            // 
-            // listBox1
-            // 
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 14;
-            this.listBox1.Location = new System.Drawing.Point(0, 0);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(284, 98);
-            this.listBox1.TabIndex = 2;
-            this.listBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.listBox1_KeyPress);
             // 
             // lStatus
             // 
@@ -52,14 +42,42 @@
             this.lStatus.TabIndex = 3;
             this.lStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lstItems
+            // 
+            this.lstItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstItems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colPriority,
+            this.colItemData});
+            this.lstItems.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lstItems.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstItems.FullRowSelect = true;
+            this.lstItems.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lstItems.Location = new System.Drawing.Point(0, 0);
+            this.lstItems.MultiSelect = false;
+            this.lstItems.Name = "lstItems";
+            this.lstItems.Size = new System.Drawing.Size(284, 97);
+            this.lstItems.TabIndex = 4;
+            this.lstItems.UseCompatibleStateImageBehavior = false;
+            this.lstItems.View = System.Windows.Forms.View.Details;
+            this.lstItems.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lstItems_KeyPress);
+            // 
+            // colPriority
+            // 
+            this.colPriority.Text = "";
+            this.colPriority.Width = 40;
+            // 
+            // colItemData
+            // 
+            this.colItemData.Text = "";
+            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(284, 409);
+            this.Controls.Add(this.lstItems);
             this.Controls.Add(this.lStatus);
-            this.Controls.Add(this.listBox1);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "fMain";
             this.Text = "ToDo.Net";
@@ -71,8 +89,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label lStatus;
+        private System.Windows.Forms.ListView lstItems;
+        private System.Windows.Forms.ColumnHeader colPriority;
+        private System.Windows.Forms.ColumnHeader colItemData;
     }
 }
 
